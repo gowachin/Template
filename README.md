@@ -15,6 +15,7 @@ It's a R package, with sweave files, datas, vignettes for packages and all stuff
 - put some boolean to quick set packages and all
 - add bluebox env.
 - maybe input files for different title styles.
+- add Stangle to tryhard script
 
 
 Feel free to fork this, and use it. Any recommendation is welcome :)
