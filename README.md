@@ -10,4 +10,5 @@ It's a R package, with sweave files, datas, vignettes for packages and all stuff
 - create different styles for sweave
 - expose a correct sweave for saving .RData (see Markov file)
 
+
 Feel free to fork this, and use it. Any recommendation is welcome :)
