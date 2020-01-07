@@ -26,6 +26,9 @@
 	}
 } % Globally set up abstract, list of content in newpages or not depending on the title page format.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%===================================================================%
+%\begin{} Hiding most package loading and precisions
+%===================================================================%
 % Encoding and Language
 \usepackage[utf8]{inputenc} % encoding
 \usepackage[T1]{fontenc}
@@ -240,9 +243,14 @@ urlcolor = black
 \usepackage[para,online,flushleft]{threeparttable}
 \usepackage{longtable}
 \fi
-
+%===================================================================%
+%\end{}
+%===================================================================%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Page de garde
+%===================================================================%
+%\begin{} Hiding title page 
+%===================================================================%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Informations :
 \title{\textbf{Title which is really important and not so much clickbait}}
@@ -265,7 +273,7 @@ urlcolor = black
      \noindent  \textit{\@date} \\
     \large \noindent  \@author \\
     \footnotesize \noindent  \href{mailto:maxime.jaunatre@etu.univ-grenoble-alpes.fr}{Mail}
-   % \end{center}
+   
    % {\large
       %\lineskip .5em%
     %  \begin{tabular}[t]{l}%
@@ -274,7 +282,7 @@ urlcolor = black
      % \end{tabular}\par}%
     %\vskip 1em%
     %{\large \@date}%
-% \end{center}%
+
   %\par
   %\vskip .5em
   }
@@ -316,11 +324,16 @@ urlcolor = black
 \end{figure}
 \hrule
 }
-
+%===================================================================%
+%\end{}
+%===================================================================%
 \begin{document}
 \def\biblio{} \def\sub_title{}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Title
+%===================================================================%
+%\begin{} Hiding another title page precision
+%===================================================================%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifthenelse{\boolean{redef_title}}{
 	\maketitle
@@ -392,6 +405,9 @@ DivAdapt
 \hrule
 }
 }
+%===================================================================%
+%\end{}
+%===================================================================%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Abstract
 % ignore todo in wordcount !
