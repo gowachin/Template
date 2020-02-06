@@ -1,3 +1,122 @@
 % Encoding and Language
 \usepackage[utf8]{inputenc} % encoding
 \usepackage[T1]{fontenc}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Front page informations
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+\newcommand\logolab[1]{\def\@logolab{\includegraphics[width=0.5\linewidth,left]{\main/#1}}}
+\newcommand\tutor[1]{\def\@tutor{#1}}
+\newcommand\labo[1]{\def\@labo{#1}}
+\newcommand\team[1]{\def\@team{#1}}
+\newcommand\labadr[1]{\def\@labadr{\footnotesize #1}}
+\newcommand\pict[1]{\def\@pict{\includegraphics[height = 7cm]{\main/#1}}}
+\newcommand\credpict[1]{\def\@credpict{#1}}
+\newcommand\email[1]{\def\@email{#1}}
+\newcommand\souten[1]{\def\@date{\today~|  Soutenance : #1}}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% ifthen statements for working on file
+\usepackage{ifthen} 
+\newboolean{notes} 
+\newboolean{terminal} 
+\newboolean{counter}
+\newboolean{bib_basic} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% loading subfiles that can compile on their own
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{subfiles}
+\def\biblio{
+	\newpage
+	
+%	> \bibliography=macro:
+%	#1->\if \cb@roottest \if@filesw \immediate \write \@auxout {\string \bibdata {#
+%	1}}\fi \fi \begingroup \ifx \@CitationPrefix \@empty \else \ifx \the@ipfilectr 
+%	\@empty \else \@cb@insertprefix \fi \fi \cb@dobiblio {\@currentipfile .bbl}\end
+%	group .	
+
+%	\newenvironment{thebibliography}[1]
+%	     {\section*{\refname}%
+%	      \@mkboth{\MakeUppercase\refname}{\MakeUppercase\refname}%
+%	      \list{\@biblabel{\@arabic\c@enumiv}}%
+%	           {\settowidth\labelwidth{\@biblabel{#1}}%
+%	            \leftmargin\labelwidth
+%	            \advance\leftmargin\labelsep
+%	            \@openbib@code
+%	            \usecounter{enumiv}%
+%	            \let\p@enumiv\@empty
+%	            \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+%	      \sloppy
+%	      \clubpenalty4000
+%	      \@clubpenalty \clubpenalty
+%	      \widowpenalty4000%
+%	      \sfcode`\.\@m}
+%	     {\def\@noitemerr
+%	       {\@latex@warning{Empty `thebibliography' environment}}%
+%	      \endlist}
+	
+	%\subsection*{Bibliographie}
+	\renewcommand{\refname}{}
+	
+	\imp[change bibliography model]
+	\ifthenelse{\boolean{bib_basic}}{
+		\bibliographystyle{authordate1}
+	}{
+		\bibliographystyle{tree}
+		%\bibliographystyle{mee}
+	}
+	%\bibliographystyle{authordate1}
+	\bibliography{\main/ICU}
+}
+
+\def\setup{
+\usepackage{\main/.temp/setup}
+
+%\let\myBib\thebibliography
+%\let\endmyBib\endthebibliography
+%
+%\renewcommand\thebibliography[1]{\ifx\relax#1\relax\else\myBib{#1}\fi}
+
+}
+
+\def\sub_title{
+\begin{figure}
+   \centering
+    \begin{minipage}{.75\textwidth}
+    \begin{center}
+    {\Large Title which is really important and not so much clickbait}
+    \end{center}
+    %\vspace{\baselineskip}
+    %\setlength{\parskip}{\smallskipamount}
+    \rule{7em}{.4pt}\par
+    %\todo[color = red]{put ellie}
+     Maxime Jaunatre $^1$ ~ | Master 2 BEE Grenoble \par 
+	\href{mailto:maxime.jaunatre@etu.univ-grenoble-alpes.fr}{Mail $^1$}~| \today \par 
+    \textbf{This is a subfile from the Master\_report.tex file}
+\end{minipage}
+\end{figure}
+\hrule
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Bibliography style
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifthenelse{\boolean{bib_basic}}{
+	\usepackage[square,sort,comma,numbers]{natbib}
+	\setcitestyle{authoryear,open={(},close={)}}
+	\renewcommand{\bibsection}{}
+}{
+	\usepackage[numbers]{natbib}
+}
+\usepackage{chapterbib}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Colours
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[table,dvipsnames*,svgnames]{xcolor} % allow to put colour in table and correct a bug in names
+% option 'gray' emulate a gray scale print of the document
+\definecolor{babyblue}{rgb}{0.54, 0.81, 0.94} % define new colours %http://latexcolor.com/ 
+\definecolor{bleudefrance}{rgb}{0.19, 0.55, 0.91}
+\definecolor{saffron}{rgb}{0.96, 0.77, 0.19}

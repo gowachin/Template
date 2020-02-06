@@ -1,5 +1,7 @@
 \providecommand{\main}{..} 
-\documentclass[../Master_report2.tex]{subfiles} 
+\documentclass[../Master_report2.tex]{subfiles}
+ 
+\setup{}
 
 \begin{document}
 
@@ -7,8 +9,8 @@
 %\@author
 %\makeatother
 % full page
-\begin{titlepage} %Page de garde!!
-%logos de page de garde
+\begin{titlepage} %front page
+%logos
 \begin{figure}
 \noindent
 \begin{minipage}{0.5\textwidth}
@@ -20,7 +22,7 @@
 \end{minipage}
 \begin{minipage}{0.5\textwidth}
 \centering
-\includegraphics[width=0.5\linewidth,right]{fig/UGA.jpg}
+\includegraphics[width=0.5\linewidth,right]{\main/fig/logo_uga.jpg}
 \end{minipage}
 \end{figure}
 
@@ -118,11 +120,15 @@ Parcours Dynamique et modélisation de la biodiversité (DynaMo)
 \@credpict
 ~|~Contact:  \href{mailto:\@email%maxime.jaunatre@etu.univ-grenoble-alpes.fr
 }{Mail $^1$}} 
-\hfill \textbf{Année 2019-2020}\\
+\hfill \textbf{Année \AdvYear{-1}\the\year-\AdvYear{1}\the\year}\\
 Université Grenoble Alpes - UFR de Chimie Biologie B.P.53 38041 Grenoble Cedex 9}
 \makeatother
 
 
 \end{titlepage}
+
+\newpage
+\nocite{RTeam2017}
+\biblio
 
 \end{document}
