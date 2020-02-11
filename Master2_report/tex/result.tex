@@ -1,3 +1,12 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Template for Master work
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\providecommand{\main}{..} 
+\documentclass[../Master_report2.tex]{subfiles} 
+
+\setup{}
+\begin{document}
+
 \section{Résultats}
 
 \subsection{Tri du jeu de données}
@@ -21,7 +30,7 @@ Dans un premier temps, le $F_{st}$ général entre les différents taxons de la 
 \begin{wrapfigure}{r}{0.30\textwidth}
 	\vspace{-20pt}
 	\begin{center}
-	\includegraphics[width=0.29\textwidth]{fig/topologie.png}
+	\includegraphics[width=0.29\textwidth]{topologie.png}
 	\end{center}
 	\caption{\textbf{Topologie de la sous-section \textit{Erythrodrosum} obtenue par Neighbor-joining}, réalisé à partir de la matrice de distances $F_{st}$ par paires de populations.}
     \label{topologie}
@@ -50,7 +59,7 @@ Cette structure est par ailleurs confirmée par le clustering réalisé par adeg
 \begin{wrapfigure}{r}{0.5\textwidth}
 	\vspace{-20pt}
 	\begin{center}
-    \includegraphics[width=0.49\textwidth]{fig/DAPC.png}
+    \includegraphics[width=0.49\textwidth]{DAPC.png}
     \caption{\textbf{Analyse en composante principale discriminante de la sous-section \textit{Erythrodrosum} Pax.} Les groupes à priori sont les populations échantillonnées.}
     \label{dapc}
     \end{center}
@@ -66,7 +75,7 @@ La structuration du \clade{Hirsuta} pour différentes valeurs de K permet de voi
 \begin{wrapfigure}{r}{0.50\textwidth}
 	\vspace{-40pt}
 	\begin{center}
-	\includegraphics[width=0.49\textwidth]{fig/structure_hirsuta.png}
+	\includegraphics[width=0.49\textwidth]{structure_hirsuta.png}
 	\end{center}
 	\caption{\textbf{Structuration du \clade{Hirsuta} par sNMF.} Les K choisis vont de 2 à 5, avec 20 répétition par K et choix du meilleur run sur critère de cross-entropy.}
     \label{structure}
@@ -100,3 +109,8 @@ P1 & P2 & P3 & Outgroup & D & p-valeur \\ \midrule
 \end{table}
 
 % Ce résultat permet par contre de proposer deux hypothèses : la proximité génétique entre ces trois espèces ou alors une admixture passée avant séparation de ces populations sur des massifs isolés.
+
+
+\biblio
+
+\end{document}

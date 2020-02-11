@@ -14,12 +14,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Informations :
 \logolab{fig/labo.jpg}
-\title{this is a very long title to test what happens when i say some shit with this title part}
+\title{Title : An example report in latex for my master degree in Grenoble.}
 \author{Maxime Jaunatre $^1$}
-\souten{mardi 12 juin 2020}
+\souten{mardi 2 juin 2020}
 \tutor{François Munoz}
 \labo{LECA}
-\team{DivAdapt}
+\team{Bouclés}
 \labadr{CIRAD, TA A51/PS2, Boulevard de la Lironde,\\ 34398 Montpellier cedex 5}
 \pict{fig/Primula_hirsuta_Grand_Chat_longistyle.JPG}
 \credpict{Image : \textit{Primula hirsuta}, Florian Boucher}
@@ -31,6 +31,7 @@
 \setboolean{terminal}{false} % compile document with dark colour to help your pretty eyes
 \setboolean{counter}{true} % add a word count at the end of the document
 \setboolean{bib_basic}{true} % bib_basic use authordate format, with false you can provide a .bst file 
+\usepackage{\main/.temp/subfile_setup}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % language
 \usepackage[french]{babel} % or 'english'
@@ -49,6 +50,8 @@
 \newcommand{\defi}[2]{\textbf{#1: }{#2}}
 \newcommand{\imp}[1][this!]{ {\todo[inline,color=red]{\textbf{Check: #1}} } }
 
+
+\newcommand{\clade}[1]{clade `#1'}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %===================================================================%
 %\end{}
@@ -100,13 +103,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % BODY
 \newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 This document provide all the command I usually use for my reports. Gray notes are here to explain some stuff, while red ones are here to be a last line limit when I wrote my report too close to the deadline and misread colours. I defined a new todonotes juste for this, to help me manage my work. 
 
 \imp[imp command]
 
-\section{Basic command}
+\section{Basic commands}
 
 Here is some memory about basic latex commands. Like putting some text in \textit{italic} for species names. Or \textbf{bold} for important parts. This is completed with a possibility to highlight with the \hl{hl} command. The colour is defined at the very beginning of the document, but another command allow to change with \hlc[red]{hlc[red]word}. Every colour is possible and you can define them by the xcolor package.
 
@@ -128,8 +132,6 @@ To help in long work redaction, the todonotes package is loaded by default, allo
 
 \todo[inline, color = gray]{inline}
 \todo[inline, author = Gowachin, color = gray]{specifying the author of the todo comment}
-
-% \input{tex/Class.tex}
 
 \section{Maths}
 
@@ -185,7 +187,7 @@ Therefore, overdispertion could just arise from historical processes, independen
 
 \subsection{multicols}
 
-Captions are harder to set in twocolumn environnement, but here is an example.
+Captions are harder to set in twocolumn environnement, but here is an example. I don't really controle figure in two-columns docs to put them in a reproducible document, but I think time will help with this.
 
 \begin{multicols}{2} 
 \lipsum[1-3] 
@@ -195,20 +197,28 @@ Captions are harder to set in twocolumn environnement, but here is an example.
 
 \subfile{tex/subpart1}
 
+Next is my first master year report, to show examples with figures and all other stuff.
+
+\newpage
+\subfile{tex/intro}
+\subfile{tex/mat_meth}
+\subfile{tex/result}
+\subfile{tex/discuss}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Références
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
-\cite{}
 %\subsection*{Bibliographie}
 \imp[change bibliography model]
 \ifthenelse{\boolean{bib_basic}}{
 	\bibliographystyle{authordate1}
 }{
 	\bibliographystyle{.temp/bst/tree}
-	%\bibliographystyle{mee}
+%	\bibliographystyle{.temp/bst/mee}
 }
-\bibliography{ICU}
+
+\bibliography{Primula}
 
 \begin{web}[h]
 	\caption{\url{ https://github.com}}
@@ -225,30 +235,7 @@ Ce document est disponible en ligne sous format ``.Rnw'', contenant tout le code
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Annexes
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
- \begin{landscape}
- \begin{annexe}
- 	\centering
- \rowcolors{2}{white}{gray!25}
- \resizebox{27cm}{!}{%
- 	\begin{tabular}{cccccccccccc}
- 	\toprule
- Species &Locality &Code &Morph &Collector &Date &Longitude &Latitude &Altitude&Reads raw &Reads trimmed &Voucher \\
- 	\midrule
- P. apennina* &Sella del Marmagna, Italy &AMB &Short-styled &F. Boucher/L. Gallien &30/05/14 & 10.00575 & 44.3978 &1610&6885928&6486849&Photo \\
- P. apennina &Monte Marmagna, Italy &AML &Long-styled &F. Boucher/L. Gallien &30/05/14 & 9.99731 & 44.39672 &1825&1856867&1663377&Photo \\
- P. apennina &Monte Orsaro, Italy &AOL &Long-styled &F. Boucher/L. Gallien &30/05/14 & 9.99666 & 44.39883 &1818&3494081&3230296&Photo \\
- P. cottia &Below locus classicus, Italy &CS1 & NA &F. Boucher &23/07/14 & 7.0716 & 44.9271 &1159&5127416&4814386&Photo \\
-  P. apennina* &Sella del Marmagna, Italy &AMB &Short-styled &F. Boucher/L. Gallien &30/05/14 & 10.00575 & 44.3978 &1610&6885928&6486849&Photo \\
- P. apennina &Monte Marmagna, Italy &AML &Long-styled &F. Boucher/L. Gallien &30/05/14 & 9.99731 & 44.39672 &1825&1856867&1663377&Photo \\
- P. apennina &Monte Orsaro, Italy &AOL &Long-styled &F. Boucher/L. Gallien &30/05/14 & 9.99666 & 44.39883 &1818&3494081&3230296&Photo \\
- P. cottia &Below locus classicus, Italy &CS1 & NA &F. Boucher &23/07/14 & 7.0716 & 44.9271 &1159&5127416&4814386&Photo \\
- 	\bottomrule
- 	\end{tabular}}
- 	\caption{\textbf{Exemple d'annexe}}
- 	\label{table_ind}
- \end{annexe}
- \end{landscape}
+\subfile{tex/annexes}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % word count
