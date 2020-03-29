@@ -1,12 +1,12 @@
 Package: Template
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Template for compendium
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
+Author: Maxime Jaunatre
+Maintainer: Maxime Jaunatre <yourself@somewhere.net>
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+License: CeCILL-2
 Encoding: UTF-8
 LazyData: true
 Imports: graphics,

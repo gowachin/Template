@@ -1,0 +1,35 @@
+% Encoding and Language
+\usepackage[utf8]{inputenc} % encoding
+\usepackage[T1]{fontenc}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Front page informations
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+\newcommand\logolab[1]{\def\@logolab{\includegraphics[width=0.5\linewidth,left]{\main/#1}}}
+\newcommand\tutor[1]{\def\@tutor{#1}}
+\newcommand\labo[1]{\def\@labo{#1}}
+\newcommand\team[1]{\def\@team{#1}}
+\newcommand\labadr[1]{\def\@labadr{\footnotesize #1}}
+\newcommand\pict[1]{\def\@pict{\includegraphics[height = 7cm]{\main/#1}}}
+\newcommand\credpict[1]{\def\@credpict{#1}}
+\newcommand\email[1]{\def\@email{#1}}
+\newcommand\souten[1]{\def\@date{\today~|  Soutenance : #1}}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% ifthen statements for working on file
+\usepackage{ifthen} 
+\newboolean{notes} 
+\newboolean{terminal} 
+\newboolean{counter}
+\newboolean{bib_basic} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Colours
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[table,dvipsnames*,svgnames]{xcolor} % allow to put colour in table and correct a bug in names
+% option 'gray' emulate a gray scale print of the document
+\definecolor{babyblue}{rgb}{0.54, 0.81, 0.94} % define new colours %http://latexcolor.com/ 
+\definecolor{bleudefrance}{rgb}{0.19, 0.55, 0.91}
+\definecolor{saffron}{rgb}{0.96, 0.77, 0.19}

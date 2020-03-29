@@ -1,0 +1,54 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% loading subfiles that can compile on their own
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\biblio{
+
+	%\newpage	
+	%\subsection*{Bibliographie}
+	\renewcommand{\refname}{}
+	%\imp[change bibliography model]
+	\ifthenelse{\boolean{bib_basic}}{
+		\bibliographystyle{authordate1}
+	}{
+		\bibliographystyle{tree}
+		%\bibliographystyle{mee}
+	}
+	%\bibliographystyle{authordate1}
+	%\bibliography{\main/ICU}
+	\bibliography{\main/Primula}
+}
+
+\def\setup{
+\usepackage{\main/.temp/setup}
+}
+
+\def\sub_title{
+\begin{figure}
+   \centering
+    \begin{minipage}{.75\textwidth}
+    \begin{center}
+    {\Large Title which is really important and not so much clickbait}
+    \end{center}
+    %\vspace{\baselineskip}
+    %\setlength{\parskip}{\smallskipamount}
+    \rule{7em}{.4pt}\par
+    %\todo[color = red]{put ellie}
+     Maxime Jaunatre $^1$ ~ | Master 2 BEE Grenoble \par 
+	\href{mailto:maxime.jaunatre@etu.univ-grenoble-alpes.fr}{Mail $^1$}~| \today \par 
+    \textbf{This is a subfile from the Master\_report.tex file}
+\end{minipage}
+\end{figure}
+\hrule
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Bibliography style
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifthenelse{\boolean{bib_basic}}{
+	\usepackage[square,sort,comma,numbers]{natbib}
+	\setcitestyle{authoryear,open={(},close={)}}
+	%\renewcommand{\bibsection}{}
+}{
+	\usepackage[numbers]{natbib}
+}
+%\usepackage{chapterbib}

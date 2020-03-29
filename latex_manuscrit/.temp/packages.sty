@@ -1,0 +1,168 @@
+\usepackage{mathptmx} % Police Times si compilateur pdfLatex
+\usepackage{parskip} % to allow multilines equations
+\usepackage{amsmath}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Page Style
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{geometry}
+%\geometry{a4paper} % format de feuille
+\geometry{top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm} %marges
+\linespread{1.5} % interligne
+\usepackage{fancyhdr} %en tete et pied de page
+\usepackage{lastpage} % marche pas chez julia
+\pagestyle{plain} 
+
+% possibility to modulate the pagestyle : 
+%\pagestyle{fancy}
+%\chead{\includegraphics[width=\linewidth]{head.png}}
+%\setlength\headheight{2.5cm}
+%\lhead{}
+%\rhead{}
+%\cfoot{\thepage} % get rid of the page number
+%\renewcommand{\headrulewidth}{0pt}
+%\renewcommand{\footrulewidth}{1pt}
+
+% specific packages :
+\usepackage{lscape} % use : \begin{landscape} ... \end{landscape}
+\usepackage{multicol} % use : \begin{multicols}{2} ... \end{multicols}
+\setlength{\columnsep}{1cm}
+\usepackage{lipsum} % use : \lipsum[1-3]
+\usepackage{advdate} % change the current date
+
+% Skip an all paragraphe use : \iffalse ... \fi
+%%%%%%%%%%%%%%%%%%%%%%%%%% Figures   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{wrapfig} 
+\usepackage{graphicx, subcaption, setspace, booktabs, wrapfig}
+\graphicspath{{fig/}{../fig/}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Code R   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{listings}
+%http://latexcolor.com/ 
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{cerulean}{rgb}{0.0, 0.48, 0.65}
+\definecolor{beaublue}{rgb}{0.95, 0.95, 0.95}
+\definecolor{amber}{rgb}{1.0, 0.25, 0.0}
+\definecolor{indiagreen}{rgb}{0.07, 0.53, 0.03}
+\definecolor{number}{rgb}{0.01, 0.01, 0.01}
+
+\lstset{language = R,
+    basicstyle=\footnotesize\color{black},
+    breaklines=true,
+    keepspaces=true,
+    firstnumber=1,
+    numbers=left, % where line-numbers; possible values (none, left, right)
+    numbersep=5pt,  % how far the line-numbers are from the code
+    numberstyle=\color{number},
+    deletekeywords={_,/,C,troll,approx,min},
+    backgroundcolor=\color{beaublue},   
+    commentstyle=\color{indiagreen},
+    keywordstyle=\color{amber},
+    stringstyle=\color{cerulean}
+    }
+    
+%\begin{lstlisting}
+%  %%%% put the R code here %%%%
+%\end{lstlisting}
+%%%%%%%%%%%%%%%%%%%%%%%%%% LATEX DIFF %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% use terminal: latexdiff ancientfile.tex newfile.tex > revisionfile.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%DIF UNDERLINE PREAMBLE %DIF PREAMBLE
+\RequirePackage[normalem]{ulem} %DIF PREAMBLE
+\RequirePackage{color}\definecolor{RED}{rgb}{1,0,0}\definecolor{BLUE}{rgb}{0,0,1} %DIF PREAMBLE
+\providecommand{\DIFadd}[1]{{\protect\color{blue}\uwave{#1}}} %DIF PREAMBLE
+\providecommand{\DIFdel}[1]{{\protect\color{red}\sout{#1}}} %DIF PREAMBLE
+%DIF SAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddbegin}{} %DIF PREAMBLE
+\providecommand{\DIFaddend}{} %DIF PREAMBLE
+\providecommand{\DIFdelbegin}{} %DIF PREAMBLE
+\providecommand{\DIFdelend}{} %DIF PREAMBLE
+%DIF FLOATSAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddFL}[1]{\DIFadd{#1}} %DIF PREAMBLE
+\providecommand{\DIFdelFL}[1]{\DIFdel{#1}} %DIF PREAMBLE
+\providecommand{\DIFaddbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFaddendFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelendFL}{} %DIF PREAMBLE
+%DIF END PREAMBLE EXTENSION ADDED BY LATEXDIFF
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Word count
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{moreverb} % for verbatim ouput
+\usepackage{alltt}
+% Count of words
+\immediate\write18{texcount -inc -incbib 
+-sum Master_report.tex > /tmp/wordcount.tex}
+\newcommand\wordcount{
+\begin{alltt}
+\input{/tmp/wordcount.tex}
+\end{alltt}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% References
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{hyperref,url} % lien cliquables
+\hypersetup{
+colorlinks = true,
+linkcolor = black,
+citecolor = black,
+urlcolor = black
+} % https://tex.stackexchange.com/questions/50747/options-for-appearance-of-links-in-hyperref
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% New captions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{caption}
+\DeclareCaptionType{annexe}[Annexe][Liste d'annexes] % Add Annexes
+\DeclareCaptionType{web}[Web][Sites Web] % Add captions web
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Highlight
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{soul}
+\newcommand{\hlc}[2][yellow]{ {\sethlcolor{#1} \hl{#2}} }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Notes and Terminal view
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifthenelse{\boolean{terminal}}{
+	\usepackage{pagecolor} % change the page color
+	\pagecolor{darkgray} \color{lightgray}
+	\sethlcolor{bleudefrance} % colour to highlight in terminal mod
+	\ifthenelse{\boolean{notes}}{
+		\usepackage[backgroundcolor=black]{todonotes} 
+	}{
+		\usepackage[disable]{todonotes}
+	}
+}{
+	\sethlcolor{yellow} % colour to highlight
+	\ifthenelse{\boolean{notes}}{
+		\usepackage[backgroundcolor=orange]{todonotes} 
+	}{
+		\usepackage[disable]{todonotes}
+	}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Boxes
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[export]{adjustbox}
+\newenvironment{wordbox}{% % a box with a title 'Glossary'
+    \noindent
+    %\refstepcounter{bluebox}
+    \color{black}
+    \adjustbox{innerenv={varwidth}{\dimexpr\linewidth-2\fboxsep-0.45cm\relax},
+    margin=\fboxsep+.25cm \fboxsep+.2cm,bgcolor=saffron,frame,center}\bgroup  
+    \textbf{Glossary}
+}{%
+    \egroup
+}
+
+\newcounter{bluebox}[section]
+\newenvironment{bluebox}[1]{% % a boxe with a caption and number
+    \noindent
+    \refstepcounter{bluebox}
+    \color{black}
+    \adjustbox{innerenv={varwidth}{\dimexpr\linewidth-2\fboxsep-0.45cm\relax},
+    margin=\fboxsep+.25cm \fboxsep+.2cm,bgcolor=saffron,frame,center}\bgroup  
+    \textbf{Boxe~\thebluebox : #1}
+}{%
+    \egroup
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{subfiles}
