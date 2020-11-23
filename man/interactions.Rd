@@ -4,8 +4,11 @@
 \alias{interactions}
 \title{interactions}
 \usage{
-interactions(nb_pop, list.interactions = rep(0, nb_pop * (nb_pop - 1)),
-  labels = sprintf("Pop_\%d", seq_len(nb_pop)))
+interactions(
+  nb_pop,
+  list.interactions = rep(0, nb_pop * (nb_pop - 1)),
+  labels = sprintf("Pop_\%d", seq_len(nb_pop))
+)
 }
 \arguments{
 \item{nb_pop}{is the number of populations in the model. The matrix interaction with only one population is set to 0.}

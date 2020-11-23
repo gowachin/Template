@@ -3,12 +3,15 @@
 \docType{package}
 \name{beepodyna}
 \alias{beepodyna}
-\alias{beepodyna-package}
 \title{BeePODYNA}
 \usage{
-beepodyna(label, community,
-  interactions = interactions(length(community)), functions = identity,
-  verbose = TRUE)
+beepodyna(
+  label,
+  community,
+  interactions = interactions(length(community)),
+  functions = identity,
+  verbose = TRUE
+)
 }
 \arguments{
 \item{label}{is the label of the \code{beepodyna} object.}

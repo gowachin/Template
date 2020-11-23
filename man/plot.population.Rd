@@ -4,8 +4,14 @@
 \alias{plot.population}
 \title{plot_population}
 \usage{
-\method{plot}{population}(x, ..., capacity_line = TRUE,
-  capacity_lty = 3, text_print = TRUE, add = FALSE)
+\method{plot}{population}(
+  x,
+  ...,
+  capacity_line = TRUE,
+  capacity_lty = 3,
+  text_print = TRUE,
+  add = FALSE
+)
 }
 \arguments{
 \item{x}{a population object}

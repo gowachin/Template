@@ -1,0 +1,24 @@
+\babel@toc {french}{}
+\contentsline {section}{\numberline {1}Basic commands}{3}{section.1}
+\contentsline {section}{\numberline {2}To do notes}{3}{section.2}
+\contentsline {section}{\numberline {3}Maths}{4}{section.3}
+\contentsline {section}{\numberline {4}Captions}{4}{section.4}
+\contentsline {subsection}{\numberline {4.1}multicols}{7}{subsection.4.1}
+\contentsline {section}{\numberline {5}Import other documents}{8}{section.5}
+\contentsline {section}{\numberline {6}Adding R code}{8}{section.6}
+\contentsline {section}{\numberline {7}Introduction}{9}{section.7}
+\contentsline {section}{\numberline {8}Mat\IeC {\'e}riels et m\IeC {\'e}thodes}{11}{section.8}
+\contentsline {subsection}{\numberline {8.1}Cas d'\IeC {\'e}tude}{11}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.2}\IeC {\'E}chantillonnage}{11}{subsection.8.2}
+\contentsline {subsection}{\numberline {8.3}Bioinformatique}{12}{subsection.8.3}
+\contentsline {subsection}{\numberline {8.4}G\IeC {\'e}n\IeC {\'e}tique des populations}{13}{subsection.8.4}
+\contentsline {subsection}{\numberline {8.5}Hypoth\IeC {\`e}se d'admixture}{14}{subsection.8.5}
+\contentsline {section}{\numberline {9}R\IeC {\'e}sultats}{16}{section.9}
+\contentsline {subsection}{\numberline {9.1}Tri du jeu de donn\IeC {\'e}es}{16}{subsection.9.1}
+\contentsline {subsection}{\numberline {9.2}Sous-section \textit {Erythrodrosum}}{16}{subsection.9.2}
+\contentsline {subsection}{\numberline {9.3}Clade `Hirsuta'}{17}{subsection.9.3}
+\contentsline {subsection}{\numberline {9.4}Hypoth\IeC {\`e}se d'admixture}{18}{subsection.9.4}
+\contentsline {section}{\numberline {10}Discussion}{19}{section.10}
+\contentsline {subsection}{\numberline {10.1}Structure g\IeC {\'e}n\IeC {\'e}tique alpine}{19}{subsection.10.1}
+\contentsline {subsection}{\numberline {10.2}Flux de g\IeC {\`e}nes et glaciations}{20}{subsection.10.2}
+\contentsline {subsection}{\numberline {10.3}Conclusion}{21}{subsection.10.3}
